@@ -1,0 +1,49 @@
+<xml version="1.0" encoding="UTF-8">
+<room name="Violet" description="a large round room with violet draperies" state="half-dirty" north="Pig" east="Student" south="Teacher" west="Green">
+	<animal name="Peter" description="a brown dog"/>
+	<animal name="Lily" description="a black and white cat"/>
+	<NPC name="Mary" description="a tall woman"/>
+	<PC name="Squash" description="one who doesn't leave the animals and NPC-s alone"/>
+</room>
+<room name="Pig" description="this one used to be a pigsty, now a guestroom" state="clean" north="Roofless" south="Violet" west="Windy">
+	<animal name="Lucy" description="a pink pig"/>
+	<animal name="Mutsu" description="a black-spotted pig"/>
+</room>
+<room name="Student" description="the pigs don't like to come here" state="dirty" south="Snowy" west="Violet">
+  <NPC name="Jeremy" description="a student who writes Java projects in the very last moment"/>
+  <NPC name="Martina" description="a student who doesn't write Java projects at all"/>
+  <NPC name="Lewell" description="a student who doesn't even know what a Java project is"/>
+  <NPC name="Ema" description="a student who always writes Java projects on time"/>
+</room>
+<room name="Teacher" description="the pigs don't like to come here either" state="dirty" north="Violet" east="Snowy" west="Drafty">
+  <NPC name="Pencho" description="students always fall asleep in his class"/>
+  <NPC name="Divachka" description="a teacher who falls asleep in her own classes"/>
+</room>  
+<room name="Green" description="there is grass growing on the floor" state="half-dirty" north="Windy" east="Violet" south="Drafty"> 
+  <NPC name="Robot" description="made of tin"/>
+  <NPC name="AI" description="made of intelligent parts"/>
+  <animal	name="Savage" description="a chihuahua"/>
+  <animal	name="Fluffy" description="a rottweiler"/>
+</room>
+<room	name="Roofless" description="it was not designed like this, but both teachers and students are too lazy to repair" state="half-dirty" east="Basement" south="Pig"> 
+  <NPC name="Programmer" description="this one knows how to write Java projects"/>
+  <animal	name="Meow" description="this animal is an old hairy lion"/>
+</room>
+<room	name="Basement" description="there is mold on the walls" state="half-dirty" west="Roofless">
+  <animal	name="Roddy" description="a big rat who has his own hole in the basement"/>
+  <NPC name="Moldy" description="likes to sleep in the basement"/>
+</room>
+<room	name="Windy" description="the windows are not insulated properly" state="dirty" east="Pig" south="Green">
+  <NPC name="Maggie" description="likes animals"/>
+  <NPC name="Carrie" description="likes messy rooms"/>
+</room>
+<room	name="Drafty" description="someone needs to patch that wall" state="clean" north="Green" east="Teacher">
+  <animal	name="Milka" description="a violet cow"/>
+  <animal	name="Marko" description="a gray donkey"/>
+  <animal name="Moo" description="a jersey cow"/>
+</room>
+<room	name="Snowy" description="this one is inaccessible November-March if you don't have a shovel" state="clean" north="Student" west="Teacher">
+  <animal	name="Polly" description="a polar bear"/>
+  <animal	name="Pen" description="a penguin"/>
+</room>
+</xml>
