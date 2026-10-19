@@ -26,6 +26,28 @@ public final class SpecificationTest {
         return result.stream();
     }
 
+    @TestFactory Stream<DynamicTest> gameEngineControlFlow() {
+        List<DynamicTest> result=new ArrayList<>();
+        result.add(DynamicTest.dynamicTest("TC-CF01 | GameEngine.look | no exits and no other occupants", () -> {
+            World world=new World(); Room solo=room("Solo"); Player player=new Player("Hero","player");
+            List<String> log=new ArrayList<>(); world.addRoom(solo); world.addCreature(player,solo);
+            GameEngine game=new GameEngine(world,new Random(0),log::add); game.look(player);
+            assertTrue(log.contains("Exits: none"));
+            assertTrue(log.contains("Occupancy: 1/10."));
+            assertTrue(log.contains("No other creatures are here."));
+        }));
+        result.add(DynamicTest.dynamicTest("TC-CF02 | GameEngine.look | exits and another occupant", () -> {
+            F f=new F();
+            f.a.connect(Direction.NORTH,f.b);
+            f.w.addCreature(new Animal("Dog","a dog"),f.a);
+            f.game.look(f.p);
+            assertTrue(f.log.contains("Exits: north -> B"));
+            assertTrue(f.log.contains("Dog | animal | a dog"));
+            assertFalse(f.log.stream().anyMatch(s -> s.startsWith("Hero | PC")));
+        }));
+        return result.stream();
+    }
+
     @TestFactory Stream<DynamicTest> parameterClasses() {
         List<DynamicTest> result=new ArrayList<>();
         result.add(DynamicTest.dynamicTest("TC-A001 | EC-D | 'n'", () -> { assertEquals(Direction.NORTH, Direction.parse("n")); }));
